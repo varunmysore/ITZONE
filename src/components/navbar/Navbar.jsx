@@ -17,6 +17,12 @@ const Navbar = () => {
   const toggleMenu = () => {
     mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
   };
+
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
   return (
     <nav className={`container ${sticky ? "dark-nav" : ""}`}>
       <img src={logo} alt="" className="logo" />
@@ -45,6 +51,20 @@ const Navbar = () => {
           <Link to="testimonials" smooth="yes" offset={-300}>
             Testimonials
           </Link>
+        </li>
+
+        <li className="dropdown">
+          <span onClick={toggleDropdown}>Services</span>
+          {showDropdown && (
+            <ul className="dropdown-content">
+              <li>
+                <Link to="/Page1">Service 1</Link>
+              </li>
+              <li>
+                <Link to="/service2">Service 2</Link>
+              </li>
+            </ul>
+          )}
         </li>
         <li>
           <Link className="btn" to="contact" smooth="yes" offset={-300}>

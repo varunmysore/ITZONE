@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./components/navbar/Navbar";
+
 import Hero from "./components/hero/Hero";
 import Programs from "./components/programs/Programs";
 import Title from "./components/Title/Title";
@@ -16,6 +17,8 @@ const App = () => {
     <div>
       <Navbar />
       <Hero />
+      {/* <Carousel /> */}
+      {/* <CarouselBootstrap /> */}
       <div className="container">
         <Title sub="Our Program" main="What We Offer" />
         <Programs />
